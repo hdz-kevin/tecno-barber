@@ -354,12 +354,11 @@ p {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
         column-gap: 2.5rem;
-        row-gap: 1rem;
     }
 }
 
 .service {
-    border-bottom: 1px solid rgba(211, 211, 211, 0.3);
+    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
     padding: 2rem 0 1rem;
 }
 
@@ -381,6 +380,189 @@ p {
 @media (min-width: 768px) {
     .service-price {
         font-size: 2.8rem;
-        margin-right: 1rem;
+        margin-right: 2rem;
     }
-} 
+}
+
+/* Info Section */
+.info-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, var(--dark) 100%);
+    border-top: 1px solid rgba(235, 22, 22, 0.1);
+}
+
+.info-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+@media (min-width: 768px) {
+    .info-content {
+        grid-template-columns: 1fr 1fr;
+        gap: 6rem;
+    }
+}
+
+.info-text h2 {
+    color: var(--white);
+    font-size: 3rem;
+    margin-bottom: 3rem;
+    position: relative;
+}
+
+.info-text h2::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 60px;
+    height: 3px;
+    background: var(--primary);
+}
+
+@media (min-width: 768px) {
+    .info-text h2 {
+        font-size: 3.6rem;
+    }
+}
+
+.info-text p {
+    font-size: 1.6rem;
+    line-height: 1.7;
+    margin-bottom: 2.5rem;
+    color: var(--gray-light);
+}
+
+.info-features {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 3rem;
+}
+
+.info-features li {
+    font-size: 1.5rem;
+    margin-bottom: 1.2rem;
+    color: var(--gray-light);
+    display: flex;
+    align-items: center;
+    gap: 1.2rem;
+}
+
+.feature-icon {
+    color: var(--primary);
+    flex-shrink: 0;
+    width: 20px;
+    height: 20px;
+}
+
+.info-features li span {
+    font-weight: 500;
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary);
+    color: var(--white);
+    padding: 1.2rem 2.5rem;
+    font-size: 1.6rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    font-family: var(--oswald);
+}
+
+.cta-button:hover {
+    background: #d12020;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(235, 22, 22, 0.3);
+}
+
+.info-schedule {
+    background: rgba(255, 255, 255, 0.03);
+    padding: 3rem;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.info-schedule h3 {
+    color: var(--white);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.schedule-grid {
+    margin-bottom: 2.5rem;
+}
+
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.schedule-item:last-child {
+    border-bottom: none;
+}
+
+.schedule-item .day {
+    font-weight: 600;
+    color: var(--white);
+    color: var(--gray-light);
+    /* font-family: var(--oswald); */
+    font-size: 2rem;
+}
+
+.schedule-item .time {
+    color: var(--gray-light);
+    font-weight: 700;
+    /* font-family: var(--jetbrains); */
+    font-size: 1.4rem;
+}
+
+.contact-info {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 2rem;
+    text-align: center;
+}
+
+.contact-info p {
+    color: var(--gray-light);
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.8rem;
+    font-weight: 500;
+}
+
+.contact-icon {
+    color: var(--gray-light);
+    flex-shrink: 0;
+    margin-right: 0.5rem;
+}
+
+.contact-icon.whatsapp {
+    color: #25D366;
+}
+
+.contact-icon.location {
+    color: #FF4500;
+}
+
+@media (max-width: 768px) {
+    .info-schedule {
+        padding: 2rem;
+    }
+    
+    .schedule-item .day {
+        font-size: 1.7rem;
+    }
+    .schedule-item .time {
+        font-size: 1.4rem;
+    }
+}
