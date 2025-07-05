@@ -139,7 +139,33 @@ p {
     font-size: 1.8rem;
 }
 
-@media (min-width: 768px) {
+.navbar-nav-links a {
+    position: relative;
+    padding: 0.8rem 1.2rem;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav-links a:hover {
+    /* transform: translateY(-2px); */
+}
+
+.navbar-nav-links a::before {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 2px;
+    background: var(--primary);
+    transition: width 0.3s ease;
+}
+
+.navbar-nav-links a:hover::before {
+    width: 80%;
+}
+
+@media (min-width: 992px) {
     .navbar-nav-links {
         display: flex;
         align-items: center;
@@ -151,12 +177,20 @@ p {
     display: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .navbar-social {
         display: flex;
         align-items: center;
-        gap: 2rem;
+        gap: 2.5rem;
     }
+}
+
+.navbar-social a {
+    transition: all 0.3s ease;
+}
+
+.navbar-social a:hover {
+    transform: translateY(-3px);
 }
 
 .hero-info {
@@ -189,9 +223,10 @@ p {
     border: none;
     background-color: transparent;
     padding: 1px;
+    cursor: pointer;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .menu-toggle {
         display: none;
     }
@@ -205,13 +240,13 @@ p {
     width: 70%;
     height: 100vh;
     background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
-    border-left: 3px solid var(--primary);
+    border-left: 2px solid var(--primary);
     z-index: 1000;
     transition: right 0.3s ease;
     overflow-y: auto;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 992px) {
     .menu {
         display: none;
     }
@@ -229,13 +264,14 @@ p {
     border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-.menu-header .navbar-logo {
-    font-size: 2.8rem;
+.menu-logo {
+    font-size: 2.9rem;
     font-family: var(--oswald);
     font-weight: 700;
+    color: var(--white);
 }
 
-.menu-header .navbar-logo span {
+.menu-logo span {
     color: var(--primary);
 }
 
@@ -274,7 +310,7 @@ p {
 .menu-nav-links a {
     display: block;
     color: var(--white);
-    font-size: 2rem;
+    font-size: 1.9rem;
     font-family: var(--oswald);
     font-weight: 500;
     text-transform: uppercase;
@@ -308,8 +344,8 @@ p {
     display: flex;
     gap: 2rem;
     justify-content: center;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .menu-social a {
@@ -319,13 +355,11 @@ p {
     width: 50px;
     height: 50px;
     border-radius: 50%;
-    background: rgba(235, 22, 22, 0.1);
     border: 1px solid rgba(235, 22, 22, 0.3);
     transition: all 0.3s ease;
 }
 
 .menu-social a:hover {
-    background: rgba(235, 22, 22, 0.3);
     transform: translateY(-3px);
     box-shadow: 0 5px 15px rgba(235, 22, 22, 0.2);
 }
@@ -346,42 +380,6 @@ p {
 .menu-overlay.active {
     opacity: 1;
     visibility: visible;
-}
-
-/* Services */
-@media (min-width: 768px) {
-    .services {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        column-gap: 2.5rem;
-    }
-}
-
-.service {
-    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
-    padding: 2rem 0 1rem;
-}
-
-@media (min-width: 768px) {
-    .service {
-        display: flex;
-        flex-direction: row-reverse;
-        justify-content: space-between;
-    }
-}
-
-.service-price {
-    font-size: 2.6rem;
-    font-weight: 700;
-    color: var(--primary);
-    font-family: var(--oswald);
-}
-
-@media (min-width: 768px) {
-    .service-price {
-        font-size: 2.8rem;
-        margin-right: 2rem;
-    }
 }
 
 /* Info Section */
@@ -564,5 +562,41 @@ p {
     }
     .schedule-item .time {
         font-size: 1.4rem;
+    }
+}
+
+/* Services */
+@media (min-width: 768px) {
+    .services {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        column-gap: 2.5rem;
+    }
+}
+
+.service {
+    border-bottom: 1px solid rgba(211, 211, 211, 0.2);
+    padding: 2rem 0 1rem;
+}
+
+@media (min-width: 768px) {
+    .service {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+    }
+}
+
+.service-price {
+    font-size: 2.6rem;
+    font-weight: 700;
+    color: var(--primary);
+    font-family: var(--oswald);
+}
+
+@media (min-width: 768px) {
+    .service-price {
+        font-size: 2.8rem;
+        margin-right: 2rem;
     }
 }
