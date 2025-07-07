@@ -78,6 +78,10 @@ p {
     letter-spacing: .4px;
 }
 
+img {
+    max-width: 100%;
+}
+
 .container {
     width: 90%;
     max-width: 130rem;
@@ -88,10 +92,12 @@ p {
     padding: 6rem 0;
 }
 
+
 /* Utilities */
 .text-center {
     text-align: center;
 }
+
 
 /* Hero */
 .hero {
@@ -382,13 +388,14 @@ p {
     visibility: visible;
 }
 
-/* Info Section */
-.info-section {
-    background: linear-gradient(135deg, #1a1a1a 0%, var(--dark) 100%);
-    border-top: 1px solid rgba(235, 22, 22, 0.1);
+
+/* About Us */
+.about-us {
+    /* background: linear-gradient(135deg, #1a1a1a 0%, var(--dark) 100%); */
+    border-top: 2px solid rgba(235, 22, 22, 0.1);
 }
 
-.info-content {
+.about-us-content {
     display: grid;
     grid-template-columns: 1fr;
     gap: 4rem;
@@ -396,20 +403,124 @@ p {
 }
 
 @media (min-width: 768px) {
-    .info-content {
+    .about-us-content {
         grid-template-columns: 1fr 1fr;
         gap: 6rem;
     }
 }
 
-.info-text h2 {
+.image-stack-container {
+    /* Permite posicionar las imágenes de forma absoluta dentro de este contenedor */
+    position: relative;
+    /* Ancho base del contenedor para las imágenes */
+    width: 600px;
+    /* Alto base del contenedor para las imágenes */
+    height: 480px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-stack-item {
+    /* Posicionamiento absoluto para superponer las imágenes */
+    position: absolute;
+    width: 320px;
+    height: 270px;
+    border-radius: 8px;
+    /* Asegura que la imagen no se salga de los bordes redondeados */
+    overflow: hidden;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    /* Fondo blanco detrás de la imagen */
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.image-stack-item img {
+    /* La imagen ocupa todo el ancho y alto del contenedor */
+    width: 100%;
+    height: 100%;
+    /* Asegura que la imagen cubra el área sin distorsionarse */
+    object-fit: cover;
+    display: block;
+}
+
+.image-stack-item.item-1 {
+    z-index: 2;
+    transform: translate(140px, -55px);
+}
+
+.image-stack-item.item-2 {
+    z-index: 3;
+    transform: translate(-100px, 105px);
+}
+
+.image-stack-item.item-3 {
+    z-index: 1;
+    transform: translate(-140px, -105px);
+}
+
+        /* Media queries para responsividad */
+@media (max-width: 768px) {
+    .image-stack-container {
+        width: 90%; /* Ajusta el ancho del contenedor de imágenes */
+        height: 350px;
+        margin-bottom: 30px;
+    }
+
+    .image-stack-item {
+        width: 250px; /* Ajusta el tamaño de las imágenes */
+        height: 220px;
+    }
+
+    /* Reajusta las transformaciones para pantallas más pequeñas */
+    .image-stack-item.item-1 {
+        transform: translate(-60px, -30px) rotate(3deg);
+    }
+
+    .image-stack-item.item-2 {
+        transform: translate(-20px, 20px) rotate(-2deg);
+    }
+
+    .image-stack-item.item-3 {
+        transform: translate(60px, 0px) rotate(-5deg);
+    }
+}
+
+@media (max-width: 500px) {
+    .image-stack-container {
+        width: 100%; /* Ocupa todo el ancho disponible */
+        height: 300px;
+    }
+
+    .image-stack-item {
+        width: 200px;
+        height: 180px;
+    }
+
+    .image-stack-item.item-1 {
+        transform: translate(-40px, -20px) rotate(3deg);
+    }
+
+    .image-stack-item.item-2 {
+        transform: translate(-15px, 15px) rotate(-2deg);
+    }
+
+    .image-stack-item.item-3 {
+        transform: translate(40px, 0px) rotate(-5deg);
+    }
+}
+
+.about-us-text h2 {
     color: var(--white);
     font-size: 3rem;
+    margin-top: 0;
     margin-bottom: 3rem;
     position: relative;
 }
 
-.info-text h2::after {
+.about-us-text h2::after {
     content: '';
     position: absolute;
     bottom: -8px;
@@ -420,25 +531,25 @@ p {
 }
 
 @media (min-width: 768px) {
-    .info-text h2 {
+    .about-us-text h2 {
         font-size: 3.6rem;
     }
 }
 
-.info-text p {
+.about-us-text p {
     font-size: 1.6rem;
     line-height: 1.7;
     margin-bottom: 2.5rem;
     color: var(--gray-light);
 }
 
-.info-features {
+.features {
     list-style: none;
     padding: 0;
     margin-bottom: 3rem;
 }
 
-.info-features li {
+.features li {
     font-size: 1.5rem;
     margin-bottom: 1.2rem;
     color: var(--gray-light);
@@ -454,7 +565,7 @@ p {
     height: 20px;
 }
 
-.info-features li span {
+.features li span {
     font-weight: 500;
 }
 
@@ -477,93 +588,6 @@ p {
     box-shadow: 0 5px 15px rgba(235, 22, 22, 0.3);
 }
 
-.info-schedule {
-    background: rgba(255, 255, 255, 0.03);
-    padding: 3rem;
-    border-radius: 8px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.info-schedule h3 {
-    color: var(--white);
-    margin-bottom: 2.5rem;
-    text-align: center;
-}
-
-.schedule-grid {
-    margin-bottom: 2.5rem;
-}
-
-.schedule-item {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-.schedule-item:last-child {
-    border-bottom: none;
-}
-
-.schedule-item .day {
-    font-weight: 600;
-    color: var(--white);
-    color: var(--gray-light);
-    /* font-family: var(--oswald); */
-    font-size: 2rem;
-}
-
-.schedule-item .time {
-    color: var(--gray-light);
-    font-weight: 700;
-    /* font-family: var(--jetbrains); */
-    font-size: 1.4rem;
-}
-
-.contact-info {
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    padding-top: 2rem;
-    text-align: center;
-}
-
-.contact-info p {
-    color: var(--gray-light);
-    font-size: 1.5rem;
-    margin-bottom: 0.8rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.8rem;
-    font-weight: 500;
-}
-
-.contact-icon {
-    color: var(--gray-light);
-    flex-shrink: 0;
-    margin-right: 0.5rem;
-}
-
-.contact-icon.whatsapp {
-    color: #25D366;
-}
-
-.contact-icon.location {
-    color: #FF4500;
-}
-
-@media (max-width: 768px) {
-    .info-schedule {
-        padding: 2rem;
-    }
-    
-    .schedule-item .day {
-        font-size: 1.7rem;
-    }
-    .schedule-item .time {
-        font-size: 1.4rem;
-    }
-}
 
 /* Services */
 @media (min-width: 768px) {
