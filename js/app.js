@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', hideMenu);
     });
 
+    window.onresize = () => console.log('resizing...');
+
     window.addEventListener('resize', function() {
         if (window.innerWidth >= 768) {
             hideMenu();
