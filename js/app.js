@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', function() {
+    const header = document.querySelector(".header");
     const menuToggle = document.querySelector('.menu-toggle button');
     const menu = document.querySelector('.menu');
     const closeMenu = document.querySelector('.close-menu');
@@ -16,10 +17,16 @@ document.addEventListener('DOMContentLoaded', function() {
         link.addEventListener('click', hideMenu);
     });
 
-    window.onresize = () => console.log('resizing...');
+    window.addEventListener("scroll", () => {
+        if (window.scrollY >= 130) {
+            header.classList.add("header-body");
+        } else {
+            header.classList.remove("header-body");
+        }
+    });
 
     window.addEventListener('resize', function() {
-        if (window.innerWidth >= 768) {
+        if (window.innerWidth >= 992) {
             hideMenu();
         }
     });

@@ -47,7 +47,7 @@ h1 {
 
 @media (min-width: 992px) {
     h1 {
-        font-size: 6.5rem;
+        font-size: 6.2rem;
     }
 }
 
@@ -131,18 +131,31 @@ img {
     background-color: rgba(12, 12, 12, 0.2);
 }
 
-@media (min-width: 992px) {
-    .hero .header {
-        background-color: rgba(32, 32, 32, .1);
-        border-bottom: 1px solid rgba(228, 228, 228, 0.1);
-    }
+.header {
+    background-color: rgba(32, 32, 32, .1);
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    border-bottom: 1px solid rgba(236, 235, 235, 0.1);
+    transition: background-color 0.25s ease;
+}
+
+.header-body {
+    background-color: var(--dark);
 }
 
 .navbar {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 2.3rem 0;
+    padding: 1.5rem 0;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        padding: 1.8rem 0;
+    }
 }
 
 .navbar a {
