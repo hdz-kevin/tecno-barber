@@ -1,6 +1,8 @@
 :root {
     --primary: #eb1616;
-    --dark: #202020;
+    --dark-1: #202020;
+    --dark-2: #181818;
+    --dark-2: #1a1a1a;
     /* --gray-light: #f5f5f5; */
     --gray-light: #d1d1d1;
     --white: #ffffff;
@@ -22,7 +24,7 @@ html {
 
 body {
     font-size: 1.6rem;
-    background-color: var(--dark);
+    background-color: var(--dark-1);
     color: var(--gray-light);
     font-family: var(--roboto);
 }
@@ -95,18 +97,18 @@ img {
 }
 
 .section {
-    padding-top: 9rem;
+    padding: 9rem 0;
 }
 
 @media (min-width: 768px) {
     .section {
-        padding-top: 11rem;
+        padding: 11rem 0;
     }
 }
 
 @media (min-width: 1400px) {
     .section {
-        padding-top: 14rem;
+        padding: 12rem 0;
     }
 }
 
@@ -116,6 +118,12 @@ img {
     text-align: center;
 }
 
+.bg-dark-1 {
+    background-color: var(--dark-1);
+}
+.bg-dark-2 {
+    background-color: var(--dark-2);
+}
 
 /* Hero */
 .hero {
@@ -142,7 +150,7 @@ img {
 }
 
 .header-body {
-    background-color: var(--dark);
+    background-color: var(--dark-1);
 }
 
 .navbar {
@@ -287,7 +295,7 @@ img {
     right: -70%;
     width: 70%;
     height: 100vh;
-    background: linear-gradient(135deg, var(--dark) 0%, #1a1a1a 100%);
+    background: linear-gradient(135deg, var(--dark-1) 0%, #1a1a1a 100%);
     border-left: 2px solid var(--primary);
     z-index: 1000;
     transition: right 0.3s ease;
@@ -433,7 +441,7 @@ img {
 
 /* About Us */
 .about-us {
-    /* background: linear-gradient(135deg, #1a1a1a 0%, var(--dark) 100%); */
+    /* background: linear-gradient(135deg, #1a1a1a 0%, var(--dark-1) 100%); */
     border-top: 2px solid rgba(235, 22, 22, 0.1);
 }
 
@@ -620,7 +628,6 @@ img {
     grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
     gap: 2.5rem;
     margin-top: 4rem;
-    margin-bottom: 10rem;
 }
 
 @media (min-width: 768px) {
@@ -670,10 +677,7 @@ img {
 
 /* Footer */
 .footer {
-    background-color: #1a1a1a;
-    /* color: var(--gray-light); */
-    padding: 3rem 0 0 0;
-    margin-top: 4rem;
+    padding: 4rem 0 0;
 }
 
 .footer-content {
