@@ -705,6 +705,26 @@ img {
 }
 
 
+/* Services and Gallery titles */
+.services-title,
+.gallery-title {
+  position: relative;
+  display: block;
+  font-family: var(--oswald);
+}
+
+.services-title::after,
+.gallery-title::after {
+  content: '';
+  display: block;
+  margin: 0.7rem auto 0;
+  width: 60px;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--primary);
+}
+
+
 /* Footer */
 .footer {
     padding: 4rem 0 0;
