@@ -55,7 +55,7 @@ h1 {
 
 h2 {
     font-size: 3.2rem;
-    margin: 0 0 2.8rem;
+    margin: 0 0 3.2rem;
 }
 
 @media (min-width: 768px) {
@@ -88,6 +88,7 @@ p {
 
 img {
     max-width: 100%;
+    display: block;
 }
 
 .container {
@@ -611,7 +612,7 @@ img {
 /* Services */
 .services-title {
     color: var(--white);
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.6rem;
 }
 
 .services-description {
@@ -674,6 +675,35 @@ img {
     margin-top: 0.5rem;
     font-family: var(--oswald);
 }
+
+
+/* Gallery */
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 1rem;
+}
+
+.gallery-title {
+    margin-bottom: 3.6rem;
+}
+
+.gallery-item {
+    overflow: hidden;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s cubic-bezier(.4,1.5,.5,1);
+}
+
+.gallery-item img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
 
 /* Footer */
 .footer {
