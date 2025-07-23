@@ -1,5 +1,6 @@
 :root {
     --primary: #eb1616;
+    --primary-light: #f01d1d;
     --dark-1: #202020;
     --dark-2: #181818;
     --dark-2: #1a1a1a;
@@ -731,17 +732,29 @@ img {
 }
 
 .footer-content {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    gap: 2rem;
     padding-bottom: 2rem;
 }
 
+@media (min-width: 992px) {
+    .footer-content {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: 2rem;
+    }
+}
+
 .footer-info, .footer-hours, .footer-social {
-    flex: 1 1 220px;
-    min-width: 220px;
-    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+@media (min-width: 992px) {
+    .footer-info, .footer-hours, .footer-social {
+        flex: 1 1 220px;
+        min-width: 220px;
+        text-align: center;
+        margin-bottom: 0;
+    }
 }
 
 .footer-info h4, .footer-hours h4, .footer-social h4 {
@@ -771,29 +784,35 @@ img {
 }
 
 .footer-info li, .footer-hours li {
-    margin-bottom: 1.2rem;
+    margin-bottom: 1.4rem;
 }
 
 .footer-info .phone_number {
-    font-weight: 600;
+    text-decoration: underline;
+    font-weight: 500;
+    color: var(--primary-light);
 }
 
 .footer-social-icons {
     display: flex;
-    justify-content: center;
-    gap: 1.2rem;
-    margin-top: 0.5rem;
+    justify-content: start;
+    gap: 1rem;
+}
+
+@media (min-width: 992px) {
+    .footer-social-icons { justify-content: center; }
 }
 
 .footer-social-icons a {
     color: var(--gray-light);
     display: inline-flex;
     align-items: center;
-    transition: color 0.2s;
+    transition: all 0.2s;
+    transition: all 0.3s ease;
 }
 
 .footer-social-icons a:hover {
-    color: var(--primary);
+    transform: translateY(-3px);
 }
 
 .footer-social-icons svg {
@@ -804,14 +823,6 @@ img {
 .footer-bottom {
     padding: 1.2rem 0;
     text-align: center;
-    color: #888;
+    color: #929191;
     font-size: 1.5rem;
-}
-
-@media (max-width: 900px) {
-  .footer-content {
-    flex-direction: column;
-    gap: 2.5rem;
-    align-items: flex-start;
-  }
 }
