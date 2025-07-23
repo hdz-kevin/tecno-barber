@@ -239,7 +239,7 @@ img {
     .navbar-social {
         display: flex;
         align-items: center;
-        gap: 2.5rem;
+        gap: 2rem;
     }
 }
 
@@ -346,10 +346,6 @@ img {
     transition: background-color 0.3s ease;
 }
 
-.close-menu:hover {
-    background-color: rgba(235, 22, 22, 0.2);
-}
-
 .menu-content {
     padding: 3rem 2rem;
 }
@@ -378,7 +374,6 @@ img {
 }
 
 .menu-nav-links a:hover {
-    color: var(--primary);
     padding-left: 1rem;
 }
 
@@ -390,8 +385,8 @@ img {
     transform: translateY(-50%);
     width: 0;
     height: 2px;
-    background-color: var(--primary);
     transition: width 0.3s ease;
+    background-color: var(--white);
 }
 
 .menu-nav-links a:hover::before {
@@ -410,16 +405,12 @@ img {
     display: flex;
     align-items: center;
     justify-content: center;
-    width: 50px;
-    height: 50px;
     border-radius: 50%;
-    border: 1px solid rgba(235, 22, 22, 0.3);
     transition: all 0.3s ease;
 }
 
 .menu-social a:hover {
     transform: translateY(-3px);
-    box-shadow: 0 5px 15px rgba(235, 22, 22, 0.2);
 }
 
 .menu-overlay {
