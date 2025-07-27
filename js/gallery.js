@@ -16,19 +16,26 @@ function imageModal(src) {
 	const modal = document.createElement("DIV");
 	modal.classList.add("modal");
 	modal.appendChild(img);
-	modal.onclick = function () {
-		modal.classList.add("fade-out");
-		modal.classList.remove("fade-in");
-		setTimeout(() => {
-			modal.remove();
-		}, 300);
-	}
 
 	const body = document.querySelector("body");
 	body.appendChild(modal);
+	body.style.overflow = 'hidden';
+
+	modal.onclick = function () {
+		closeModal(modal);
+	}
 
     requestAnimationFrame(() => {
         modal.style.animation = "";
         modal.classList.add("fade-in");
     });
+}
+
+function closeModal (modal) {
+	modal.classList.remove("fade-in");
+	modal.classList.add("fade-out");
+	setTimeout(() => {
+		modal.remove();
+		document.querySelector("body").style.overflow = '';
+	}, 300);
 }
