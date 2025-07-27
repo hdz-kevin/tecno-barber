@@ -17,6 +17,7 @@
 html {
     font-size: 62.5%;
     box-sizing: border-box;
+    scroll-behavior: smooth;
 }
 
 *, *:before, *:after {
@@ -104,7 +105,7 @@ img {
 
 @media (min-width: 768px) {
     .section {
-        padding: 11rem 0;
+        padding: 10rem 0;
     }
 }
 
@@ -112,6 +113,10 @@ img {
     .section {
         padding: 12rem 0;
     }
+}
+
+.section h2 {
+    margin-top: 3rem;
 }
 
 
@@ -443,6 +448,7 @@ img {
     grid-template-columns: 1fr;
     gap: 5rem;
     align-items: center;
+    margin-top: 4rem;
 }
 
 @media (min-width: 768px) {
@@ -693,7 +699,6 @@ img {
 
 .gallery-item img:hover {
     transform: scale(1.05);
-    cursor: pointer;
 }
 
 
