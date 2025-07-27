@@ -713,26 +713,7 @@ img {
     }
 }
 
-.modal {
-    position: fixed;
-    z-index: 100;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    display: grid;
-    place-items: center;
-    background-color: rgba(0, 0, 0, 0.6);
-}
-
-.modal.fade-in {
-    animation: fadeIn 0.4s ease-in;
-}
-
-.modal.fade-out {
-    animation: fadeOut 0.4s ease-in;
-}
-
+/* Modal */
 @keyframes fadeIn {
     0% { opacity: 0;}
     100% { opacity: 1; }
@@ -743,8 +724,49 @@ img {
     100% { opacity: 0; }
 }
 
+.modal {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
 .modal img {
-    max-width: 100rem;
+    max-width: 95vw;
+    max-height: 80vh;
+    border-radius: 8px;
+}
+
+@media (min-width: 768px) {
+    .modal img {
+        max-width: 80vw;
+    }
+}
+
+@media (min-width: 992px) {
+    .modal img {
+        max-width: 70vw;
+    }
+}
+
+@media (min-width: 1200px) {
+    .modal img {
+        max-width: 100rem;
+        max-height: 60rem;
+    }
+}
+
+.modal.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
+.modal.fade-out {
+    animation: fadeOut 0.4s ease-in;
 }
 
 

@@ -21,8 +21,10 @@ function imageModal(src) {
 	body.appendChild(modal);
 	body.style.overflow = 'hidden';
 
-	modal.onclick = function () {
-		closeModal(modal);
+	modal.onclick = function (ev) {
+		if (ev.target.classList.contains("modal")) {
+			closeModal(modal);
+		}
 	}
 
     requestAnimationFrame(() => {
