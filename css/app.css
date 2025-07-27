@@ -155,7 +155,7 @@ img {
     background-color: rgba(32, 32, 32, .1);
     width: 100%;
     position: fixed;
-    z-index: 100;
+    z-index: 10;
     box-shadow: 0 2px 8px rgba(0,0,0,0.08);
     border-bottom: 1px solid rgba(236, 235, 235, 0.1);
     transition: background-color 0.25s ease;
@@ -693,6 +693,7 @@ img {
 
 .gallery-item {
     overflow: hidden;
+    cursor: pointer;
 }
 
 .gallery-item img {
@@ -703,7 +704,44 @@ img {
 }
 
 .gallery-item img:hover {
-    transform: scale(1.05);
+    transform: scale(1.06);
+}
+
+@media (min-width: 768px) {
+    .gallery-item img:hover {
+        transform: scale(1.05);
+    }
+}
+
+.modal {
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: grid;
+    place-items: center;
+    animation: fadeIn ease-in 0.3s;
+    background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal.fade-out {
+    animation: fadeOut ease-in 0.3s;
+}
+
+@keyframes fadeIn {
+    0% { opacity: 0;}
+    100% { opacity: 1; }
+}
+
+@keyframes fadeOut {
+    0% { opacity: 1;}
+    100% { opacity: 0; }
+}
+
+.modal img {
+    max-width: 100rem;
 }
 
 
