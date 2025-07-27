@@ -18,6 +18,7 @@ function imageModal(src) {
 	modal.appendChild(img);
 	modal.onclick = function () {
 		modal.classList.add("fade-out");
+		modal.classList.remove("fade-in");
 		setTimeout(() => {
 			modal.remove();
 		}, 300);
@@ -25,4 +26,9 @@ function imageModal(src) {
 
 	const body = document.querySelector("body");
 	body.appendChild(modal);
+
+    requestAnimationFrame(() => {
+        modal.style.animation = "";
+        modal.classList.add("fade-in");
+    });
 }

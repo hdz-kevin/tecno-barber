@@ -722,12 +722,15 @@ img {
     left: 0;
     display: grid;
     place-items: center;
-    animation: fadeIn ease-in 0.3s;
     background-color: rgba(0, 0, 0, 0.6);
 }
 
+.modal.fade-in {
+    animation: fadeIn 0.4s ease-in;
+}
+
 .modal.fade-out {
-    animation: fadeOut ease-in 0.3s;
+    animation: fadeOut 0.4s ease-in;
 }
 
 @keyframes fadeIn {
